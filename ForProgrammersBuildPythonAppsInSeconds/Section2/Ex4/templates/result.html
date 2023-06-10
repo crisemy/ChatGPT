@@ -1,0 +1,15 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}BMI Result{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center">BMI Result</h1>
+    <div class="alert alert-info mt-4">
+        <strong>Your BMI:</strong> {{ bmi }}
+    </div>
+    <div class="alert alert-success mt-2">
+        <strong>Category:</strong> {{ category }}
+    </div>
+</div>
+{% endblock %}

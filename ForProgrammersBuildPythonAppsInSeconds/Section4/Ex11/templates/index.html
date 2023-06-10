@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>BMI Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      h1 {
+        color: darkgray;
+        margin-top: 50px;
+      }
+      form {
+        margin-top: 50px;
+        display: inline-block;
+        text-align: left;
+        padding: 20px;
+        background-color: lightgray;
+        border-radius: 10px;
+      }
+      input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+      }
+      input[type="submit"] {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: blue;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+      p {
+        margin-top: 50px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>BMI Calculator</h1>
+    <form method="post">
+      Height (in meters): <input type="text" name="height"><br>
+      Weight (in kilograms): <input type="text" name="weight"><br>
+      <input type="submit" value="Calculate">
+    </form>
+    {% if bmi %}
+      <p>Your BMI is: {{ bmi }}</p>
+      {% if bmi >= 18.5 and bmi <= 24.9 %}
+        <p>😃 Normal BMI range!</p>
+      {% else %}
+        <p>😞 BMI outside normal range!</p>
+      {% endif %}
+    {% endif %}
+  </body>
+</html>
